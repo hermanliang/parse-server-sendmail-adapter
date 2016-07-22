@@ -39,7 +39,7 @@ var server = ParseServer({
   appName: 'Parse App',
   // The email adapter
   emailAdapter: {
-    module: 'simple-sendmail-adapter',
+    module: 'parse-server-sendmail-adapter',
     options: {
       // The address that your emails come from
       fromAddress: 'no-reply@yourdomain.com'
