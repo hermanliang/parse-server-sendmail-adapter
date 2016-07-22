@@ -12,7 +12,7 @@ npm install parse-server-sendmail-adapter --save
 
 ## Usage:
 
-```
+```javascript
 var server = ParseServer({
   ...otherOptions,
   // Enable email verification
@@ -45,6 +45,29 @@ var server = ParseServer({
     options: {
       // The address that your emails come from
       fromAddress: 'no-reply@yourdomain.com'
+    }
+  }
+});
+```
+
+## Setup Email Template
+
+```javascript
+var server = ParseServer({
+  ...
+  emailAdapter: {
+    module: 'parse-server-simple-mailgun-adapter',
+    options: {
+      // The address that your emails come from
+      fromAddress: 'no-reply@yourdomain.com',
+      // Verification email subject
+      verificationSubject: 'Please verify your e-mail for %appname%',
+      // Verification email body
+      verificationBody: 'Hi,\n\nYou are being asked to confirm the e-mail address %email% with %appname%\n\nClick here to confirm it:\n%link%',
+      // Password reset email subject
+      passwordResetSubject: 'Password Reset Request for %appname%',
+      // Password reset email body
+      passwordResetBody: 'Hi,\n\nYou requested a password reset for %appname%.\n\nClick here to reset it:\n%link%'
     }
   }
 });

@@ -1,6 +1,6 @@
 {
   "name": "parse-server-sendmail-adapter",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Used to send Parse Server password reset and email verification emails though sendmail",
   "main": "index.js",
   "scripts": {
