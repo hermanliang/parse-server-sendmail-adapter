@@ -1,6 +1,12 @@
 # parse-server-sendmail-adapter
 
-Mail adapter for Parse Server through sendmail
+Used to send Parse Server password reset and email verification emails though sendmail
+
+## Installation
+
+```
+npm install parse-server-sendmail-adapter --save
+```
 
 ## Usage:
 
