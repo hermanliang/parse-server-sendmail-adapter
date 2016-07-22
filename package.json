@@ -1,7 +1,7 @@
 {
   "name": "parse-server-sendmail-adapter",
   "version": "1.0.0",
-  "description": "Mail adapter for Parse Server through sendmail",
+  "description": "Used to send Parse Server password reset and email verification emails though sendmail",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -10,11 +10,18 @@
     "type": "git",
     "url": "git+https://github.com/hermanliang/parse-server-sendmail-adapter.git"
   },
+  "keywords": [
+    "parse",
+    "parse-server",
+    "email-adapter",
+    "sendmail"
+  ],
   "author": "Herman Liang <hermanliang80@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/hermanliang/parse-server-sendmail-adapter.git/issues"
+    "url": "https://github.com/hermanliang/parse-server-sendmail-adapter/issues"
   },
+  "homepage": "https://github.com/hermanliang/parse-server-sendmail-adapter#readme",
   "dependencies": {
     "sendmail": "^0.2.1"
   }
