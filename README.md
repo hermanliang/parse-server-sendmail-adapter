@@ -1,5 +1,7 @@
 # parse-server-sendmail-adapter
 
+[![npm version](https://img.shields.io/npm/v/parse-server-sendmail-adapter.svg?style=flat)](https://www.npmjs.com/package/parse-server-sendmail-adapter)
+
 Used to send Parse Server password reset and email verification emails though sendmail
 
 ## Installation
