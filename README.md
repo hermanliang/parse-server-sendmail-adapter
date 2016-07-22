@@ -12,11 +12,32 @@ npm install parse-server-sendmail-adapter --save
 
 ```
 var server = ParseServer({
-  ...
-  // App Name
-  appName: 'YourAppName',
-  // Environment where the user can confirm his e-mail address or reset his password (most likely the same as your 'serverURL')
-  publicServerURL: 'YourPublicServerURL',
+  ...otherOptions,
+  // Enable email verification
+  verifyUserEmails: true,
+
+  // if `verifyUserEmails` is `true` and
+  //     if `emailVerifyTokenValidityDuration` is `undefined` then
+  //        email verify token never expires
+  //     else
+  //        email verify token expires after `emailVerifyTokenValidityDuration`
+  //
+  // `emailVerifyTokenValidityDuration` defaults to `undefined`
+  //
+  // email verify token below expires in 2 hours (= 2 * 60 * 60 == 7200 seconds)
+  emailVerifyTokenValidityDuration: 2 * 60 * 60, // in seconds (2 hours = 7200 seconds)
+
+  // set preventLoginWithUnverifiedEmail to false to allow user to login without verifying their email
+  // set preventLoginWithUnverifiedEmail to true to prevent user from login if their email is not verified
+  preventLoginWithUnverifiedEmail: false, // defaults to false
+
+  // The public URL of your app.
+  // This will appear in the link that is used to verify email addresses and reset passwords.
+  // Set the mount path as it is in serverURL
+  publicServerURL: 'https://example.com/parse',
+  // Your apps name. This will appear in the subject and body of the emails that are sent.
+  appName: 'Parse App',
+  // The email adapter
   emailAdapter: {
     module: 'simple-sendmail-adapter',
     options: {
@@ -24,7 +45,6 @@ var server = ParseServer({
       fromAddress: 'no-reply@yourdomain.com'
     }
   }
-  ...
 });
 ```
 
